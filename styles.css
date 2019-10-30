@@ -1,0 +1,450 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --slantedText: "lato", sans-serif;
+  --primaryColor: #0c8129;
+  --mainDark: #3a3e3b;
+  --mainWhite: #fff;
+  --mainGrey: #e5e5e5;
+  --mainTransition: all 0.5s ease-in-out;
+  --letterSpacing: 0.1em;
+}
+body {
+  font-family: var(--slantedText);
+  line-height: 1.5;
+}
+
+/* helper/utility classes*/
+a {
+  text-decoration: none;
+}
+.center {
+  text-align: center;
+}
+.text-primary {
+  color: var(--primaryColor);
+}
+/*clearfix*/
+.clearfix:after {
+  content: " "; /* Older browser do not support empty content */
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+/* globals*/
+.section-center {
+  padding: 2rem 0;
+  width: 80vw;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.section-sub {
+  font-size: 2rem;
+  letter-spacing: var(--letterSpacing);
+  text-transform: uppercase;
+  font-weight: 300;
+  color: var(--primaryColor);
+}
+.section-title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+/* end of globals*/
+
+/* navbar and btns*/
+.nav-btn {
+  position: fixed;
+  color: rgb(135, 192, 148);
+  top: 0;
+  left: 0;
+  z-index: 1;
+  margin: 1rem 1.5rem;
+  font-size: 2.5rem;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.navbar {
+  position: fixed;
+  width: 30vw;
+  max-width: 20rem;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: var(--mainGrey);
+  padding-top: 1rem;
+  padding-left: 1rem;
+  transition: var(--mainTransition);
+  transform: translateX(-100%);
+}
+.showNav {
+  transform: translateX(0%);
+}
+.nav-close {
+  margin: 1rem 1.1rem;
+  color: rgb(135, 192, 148);
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+.nav-items {
+  list-style-type: none;
+}
+.nav-link {
+  padding: 0.1rem;
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: var(--primaryColor);
+  transition: var(--mainTransition);
+}
+.nav-link:hover {
+  padding-left: 1rem;
+}
+/* header*/
+.header {
+  min-height: 100vh;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 150, 0, 0.1),
+      rgba(0, 150, 0, 0.1)
+    ),
+    url(./images/main-bcg1.jpeg) center/cover no-repeat fixed;
+  position: relative;
+}
+
+.banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+.banner-sub {
+  color: var(--mainWhite);
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: var(--letterSpacing);
+  font-size: 2.5rem;
+  animation: first 3s linear 1;
+  margin: 0 auto;
+  /*animation*/
+}
+.banner-title {
+  text-transform: uppercase;
+  font-size: 3 rem;
+  color: var(--mainWhite);
+  margin-top: 2rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  font-weight: 100;
+  width: 70vw;
+  animation: second 3s linear 1;
+
+  /*animation*/
+}
+/* end of header*/
+
+/*bottons*/
+.banner-btn {
+  display: inline-block;
+  background: white;
+  color: var(--primaryColor);
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  transition: var(--mainTransition);
+  animation: show 2s 1;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+.banner-btn:hover {
+  background: var(--primaryColor);
+  color: white;
+  opacity: 0.9;
+}
+.main-btn {
+  display: inline-block;
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  margin: 1rem auto;
+  opacity: 0.85;
+  border: none;
+}
+
+/*end of bottons*/
+
+/*animations*/
+@keyframes show {
+  0% {
+    transform: translateY(300px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes first {
+  0% {
+    transform: translatey(-300px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes second {
+  0% {
+    transform: translateX(-1000px);
+  }
+  50% {
+    transform: translateX(200px);
+  }
+  75% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+/*end of animations*/
+
+/*content divider*/
+.divider {
+  height: 0.5rem;
+  background: linear-gradient(to left, var(--primaryColor), white, black);
+}
+.divider1 {
+  height: 0.5rem;
+  background: linear-gradient(to right, var(--primaryColor), white, black);
+}
+
+/*end of content divider*/
+
+/*skills*/
+.skill {
+  padding: 2.5rem 0;
+  text-align: center;
+  transition: var(--mainTransition);
+  background: var(--mainGrey);
+}
+.skill-icon {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  transition: var(--mainTransition);
+  color: var(--primaryColor);
+}
+.skill-title {
+  font-size: 0.9rem;
+  color: var(--primaryColor);
+  text-transform: uppercase;
+  letter-spacing: var(--letterSpacing);
+  margin-bottom: 1rem;
+  font-weight: 100;
+  transition: var(--mainTransition);
+}
+.skill-text {
+  max-width: 13rem;
+  margin: 0 auto;
+}
+.skill:hover {
+  background: var(--mainWhite);
+}
+.skill:hover .skill-icon {
+  transform: translateY(-8px);
+}
+@media screen and (min-width: 576px) {
+  .skill {
+    float: left;
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1140px) {
+  .skill {
+    width: 25%;
+  }
+}
+/*end of skills*/
+
+/*about*/
+
+.about-img,
+.about-info {
+  padding: 1rem 0;
+}
+.about-pic-container {
+  border: 4px solid var(--primaryColor);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.about-picture {
+  width: 100%;
+  display: block;
+  transition: var(--mainTransition);
+}
+.about-pic-container:hover .about-picture {
+  opacity: 1;
+  transform: scale(1.1);
+}
+.about-text {
+  padding: 0.8rem 0;
+  max-width: 26rem;
+}
+@media screen and (min-width: 992px) {
+  .about-img,
+  .about-info {
+    float: left;
+    width: 50%;
+    padding: 2rem;
+  }
+}
+/*end of about*/
+
+/*Products*/
+.products {
+  background: var(--mainGrey);
+}
+.product-text {
+  max-width: 26rem;
+}
+.product-img {
+  width: 100%;
+  display: block;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+}
+.product-img:hover {
+  transform: scale(1.1);
+}
+
+.product-title,
+.product-price {
+  letter-spacing: var(--letterSpacing);
+  text-align: center;
+  color: var(--primaryColor);
+}
+.contain-img {
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .product {
+    float: left;
+    width: 50%;
+    padding: 2rem 1rem;
+  }
+  .product-info {
+    padding: 2rem 1rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .product {
+    width: 33.3%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .product-info {
+    float: left;
+    width: 30%;
+  }
+  .product-inventory {
+    float: left;
+    width: 70%;
+  }
+  .product-img {
+    margin-left: 3.5rem;
+  }
+  .product-title,
+  .product-price {
+    transform: translateX(3.5rem);
+  }
+}
+/*end of Products*/
+
+/*contact*/
+.contact {
+  padding-top: 2rem;
+}
+.contact-item {
+  margin-bottom: 2.5rem;
+}
+.contact-title {
+  color: var(--primaryColor);
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: calc(var(--letterSpacing) * 2);
+}
+.contact-text {
+  letter-spacing: var(--letterSpacing);
+  font-weight: 300;
+}
+.contact-icon {
+  font-weight: 300;
+  margin-right: 0.5rem;
+}
+.contact-info {
+  text-align: center;
+}
+.form-control {
+  width: 100%;
+  outline: none;
+  margin: 2rem 0;
+  display: block;
+  border: none;
+  border-bottom: 2px solid var(--primaryColor);
+}
+.form-control::placeholder {
+  color: var(--primaryColor);
+  letter-spacing: var(--letterSpacing);
+}
+@media screen and (min-width: 992px) {
+  .contact-info,
+  .contact-form {
+    float: left;
+    width: 50%;
+    padding: 0 1rem;
+  }
+  .contact-info {
+    padding-top: 2rem;
+  }
+}
+/*end of contact*/
+
+.footer {
+  background: var(--mainGrey);
+  text-align: center;
+  color: var(--primaryColor);
+}
+.social-icons {
+  padding: 1rem;
+}
+.social-icon {
+  color: var(--primaryColor);
+  font-size: 1.5rem;
+  margin: 1rem 1rem;
+  transition: var(--mainTransition);
+}
